@@ -1,0 +1,37 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block css %}
+<style>
+     .content{
+            /* position: relative; */
+            height: 575px;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            background-size:cover;
+            opacity: 0.8;
+            
+        }
+        .explore{
+            color: rgb(13, 13, 13)!important;
+            text-align: center;
+            padding: 160px;
+            font-family: 'Lobster', cursive;
+            letter-spacing: 8px;
+            font-size: 75px;
+            
+        }
+</style>
+
+{% endblock %}
+
+  
+{% block content %}
+
+  <!-- this is the content section -->
+  <section class="content" style="background-image: url('static/image/Travel-Images.jpg'); ">
+    <h1 class="explore">share your travel experience </h1>
+</section>
+     <!-- this is the content section -->
+{% endblock %}

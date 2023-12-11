@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Blog your Travel</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://kit.fontawesome.com/d3a4bb160f.js" crossorigin="anonymous"></script>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+                    
+        .title{
+            padding: 8px 15px;
+            position: relative;
+            background-color: rgb(47, 140, 140);
+
+
+        }
+        .btitle{
+            font-family: 'Lobster', cursive;
+            font-size: 30px;
+            color: white;
+            letter-spacing: 5px;
+        }
+
+        .fa-brands, .fa-solid{
+
+            position: absolute;
+            top: 0%;
+            right: 0%;
+            color: white;
+            font-size: 24px;
+            padding: 14px 25px;
+            
+        }
+        .fa-facebook-f{
+            top: 0%;
+            right: 20px;
+        }
+
+        .fa-twitter{
+            top: 0%;
+            right: 60px;
+        }
+        .fa-linkedin-in{
+            top: 0%;
+            right: 110px;
+        }
+        .fa-envelope{
+            top: 0%;
+            right: 160px;
+        }
+        .fa-phone{
+            top: 0%;
+            right: 210px;
+            font-size: 21px!important;
+        }
+        nav li{
+            display: inline-block;
+            padding: 15px;
+        
+        }
+        nav{
+            background-color: white;
+        }
+        .menu{
+            list-style-type: none;
+            
+        }
+        .dropitem a{
+            display: block;
+        }
+        li a{
+            text-decoration: none;
+            padding: 15px;
+            color: black;
+            font-size: 18px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+        }
+        .menu li a:hover{
+            background-color: rgb(31, 37, 37);
+            border-radius: 10px;
+            color: white;
+        }
+
+        .dropdown{
+        position: relative;
+        z-index: 1;
+        }
+
+        .dropitem{
+            position: absolute;
+            top: 50px;
+            display: none;
+            width: 250px;
+            background-color:rgb(255, 255, 255);
+        }
+        li a:hover, .dropdown:hover .dropbtn{
+            background-color: rgb(31, 37, 37); ;
+            border-radius: 10px;
+            color: white;
+            
+        }
+        .dropdown:hover .dropitem{
+            display: block;
+            padding: 15px;
+            color: white;
+        }
+        .sign{
+            position: relative;
+        }
+
+        .user{
+            position: absolute;
+            top:0;
+            right: 190px;
+        }
+
+
+        </style>
+        {% block css %}
+
+
+        {% endblock %}
+
+    </head>
+    <body>
+    <!-- this is header section -->
+        <header class="title">
+            <h1 class="btitle">Blog Travel</h1>
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-linkedin-in"></i>
+            <i class="fa-solid fa-envelope"></i>
+            <i class="fa-solid fa-phone"></i>
+        </header>
+   <!-- this is header section -->
+
+
+      <!-- this is nav section -->
+        <nav>
+            <ul class="menu sign">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About Us</a></li>
+    
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Blogs</a>
+                    <div class="dropitem">
+                        <a href="{% url 'blogs' %}">Adventure Blogs</a>
+                        <a href="{% url 'experience' %}">Experience Blogs</a>
+                        <a href="{% url 'travel' %}">Travel Advice</a>
+                    </div>
+                </li>
+                <li><a href="{% url 'team' %}">Our Team</a></li>
+
+                <li class="dropdown user">
+                    <a href="#" class="dropbtn">User</a>
+                    <div class="dropitem">
+                        <a href="{% url 'blogs' %}">Login</a>
+                        <a href="{% url 'register' %}">Register</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+      <!-- this is nav section -->
+
+      {% block content %}
+      {% endblock %}
+
+      
+    
+    </body>
+</html>
